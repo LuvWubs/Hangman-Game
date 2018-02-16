@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hang the man: The Game!</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type = "text/javaScript" src = "assets/javascript/game.js"></script>
+    <!-- <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class = "row instructions">Strike the spacebar to get started!
+        <div class = "container">
+          <div class = "row underscores"></div>
+          <div class = "row">
+            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 remaining">Number of remaining guesses: <span id = "guessesRemaining"></span></div>
+            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6 chosen">Letters chosen: <span id = "priorGuess"></span></div>
+          </div>
+          <div class = "row wins">Wins: <span id = "wins"></span></div>
+          <div class = "row losses">Losses: <span id = "losses"></span></div>
+          <div class = "hangman"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<!--
+1. page loads
+2. press any key to get started!
+3. user key press
+  A.initial request disappears
+  B. is replaced by html main div w/ instructions + wins# + losses# + number of guesses remain + letters already chosen
+  C.math random chooses a random index out of HMword array
+    1.underscores are displayed, corresponding to # of letters
+4. users chooses letter
+  A.if letters are already in chosen letters array, unbold all letters
+  B.check if letter is already chosen on chosen letters array
+    1.if chosen letter is already chosen  (is in the chosen letters array)
+      a.in chosen letters div write 'you've already guessed that letter!' x3sec, then replace div w/ chosen letter array w/ chosen letter in bold
+    2.if chosen letter has not been chosen previously (is not in the chosen letters array)
+      a. remaining guesses decreases
+      b.if chosen letter is found in hangman words underscores array
+        1. underscore is replaced by chosen letter
+          A.if all underscores are filled
+            1.main div disappears
+            2. wins is incremented
+            3.winner message/pic displays
+            4.music plays?
+            5.new game button & no more games for me button appears
+              a.new game button clicked
+                1.reload page?
+              b.no more games for me button clicked
+                1.main div disappears and goodbye message appears
+      c.if chosen letter is not found in hangman words underscores Array
+        1.new div is created in letters guessed div
+        2.chosen letter is injected in chosen letters array
+        3.chosen letter is injected into new div
+        4.hangman increments clothing (1: body, 2: flexing, 3: suit, 4: tie, 5: wedding, 6: scrubbing floor)
+          A.when Hangman is completed (in 4 missed letters)
+            1.losses increment
+            2.sad face img displays
+            3.new game button & no more games for me button appears
+              a.new game button clicked
+                1.reload page?
+              b.no more games for me button clicked
+                1.main div disappears
+                2.goodbye message appears
+-->
