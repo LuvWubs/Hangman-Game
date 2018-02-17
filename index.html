@@ -19,15 +19,20 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class = "row instructions">Strike the spacebar to get started!
+      <div class = "row">
+        <p id = "instructions">
+          Strike the spacebar to get started!
+        </p>
         <div class = "container">
-          <div class = "row underscores"></div>
           <div class = "row">
-            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 remaining">Number of remaining guesses: <span id = "guessesRemaining"></span></div>
-            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6 chosen">Letters chosen: <span id = "priorGuess"></span></div>
+            <div id = "underscores"></div>
           </div>
-          <div class = "row wins">Wins: <span id = "wins"></span></div>
-          <div class = "row losses">Losses: <span id = "losses"></span></div>
+          <div class = "row">
+            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4"><p id = "remaining">Number of remaining guesses: <span id = "guessesRemaining"></span><p></div>
+            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6"><p id = "chosen">Letters chosen: <span id = "priorGuess"></span></p></div>
+          </div>
+          <div class = "row"><p id = "wins">Wins: <span id = "numWins"></span></p></div>
+          <div class = "row"><p id = "losses">Losses: <span id = "numLosses"></span></p></div>
           <div class = "hangman"></div>
         </div>
       </div>
@@ -59,7 +64,7 @@
         1. underscore is replaced by chosen letter
           A.if all underscores are filled
             1.main div disappears
-            2. wins is incremented
+            2.wins is incremented
             3.winner message/pic displays
             4.music plays?
             5.new game button & no more games for me button appears

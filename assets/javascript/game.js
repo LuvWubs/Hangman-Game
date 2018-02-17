@@ -30,36 +30,44 @@ var HMword = [
   "conniption",
 ];
 
+var instructions = document.getElementsByClassName("instructions").textContent;
+console.log('working??');
+
 document.addEventListener("keydown", function(event) {
   console.log(event.which);
   if (event.which === 32) {
     startGame();
   } else {
-    console.log(document.getElementsByClassName("instructions").innerHTML = "Please press the spacebar!");
+    document.getElementById("instructions").innerHTML = "Please press the spacebar!";
   }
 })
 
 function startGame() {
   console.log('game has started');
+  displayIt();
   // console.log(document.getElementsByClassName("container").style.display = "block");
-  console.log(document.getElementsByClassName("instructions").innerHTML = "This is a game of hang the man, using only a Southern Belle's circumlocution!");
-  console.log(document.getElementById("wins").innerHTML = 0);
-  console.log(document.getElementById("losses").innerHTML = 0);
-  console.log(document.getElementById("guessesRemaining").innerHTML = 6);
-  console.log(document.getElementById("priorGuess").innerHTML = 0);
-  var randoWord = HMword[Math.floor(HMword.length * Math.random())];
-  var werdLength = randoWord.length;
-  werdLength.split('').map(function (letter) {
-    // turn letter into _
-    for (i = 0; i < werdLength; i++) {
-      document.getElementsByClassNameById("underscores").innerHTML = 
-    }
-  })
-  console.log(werdLength.innerHTML = split);
-  // document.getElementsByClassName("underscores");
 }
-var userIn = document.getElementById("userIn").value;
- var output = document.getElementById("output");
- var split = new Array();
- split = userIn.split(" ");
- output.innerText = split;
+function displayIt() {
+  document.getElementById("instructions").innerHTML= "This is a game of hang the man, using only a Southern Belle's circumlocution!";
+  document.getElementById("numWins").innerHTML = 0;
+  document.getElementById("numLosses").innerHTML = 0;
+  document.getElementById("guessesRemaining").innerHTML = 6;
+  document.getElementById("priorGuess").innerHTML = 0;
+  var randoWord = HMword[Math.floor(HMword.length * Math.random())];
+  console.log(randoWord);
+  var wordLength = randoWord.length;
+  console.log(wordLength);
+
+  for (i = 0; i < wordLength; i++) {
+    document.getElementByTag("underscores").innerHTML = "_";
+  }
+}
+
+
+
+function userGuess(key) {
+  var chosen = event.key;
+  if (chosen = HMword[i]) {
+    document.getElementById("priorGuess").innerHTML = chosen;
+  }
+};
