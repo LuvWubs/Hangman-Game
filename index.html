@@ -6,41 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hang the man: The Game!</title>
 
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type = "text/javaScript" src = "assets/javascript/game.js"></script>
-    <!-- <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script> -->
+    <script type="text/javaScript" src="assets/javascript/game.js"></script>
+
   </head>
   <body>
     <div class="container-fluid">
-      <div class = "row">
-        <p id = "instructions">
-          Strike the spacebar to get started!
-        </p>
-        <div class = "container">
-          <div class = "row">
-            <div id = "underscores"></div>
-          </div>
-          <div class = "row">
-            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4"><p id = "remaining">Number of remaining guesses: <span id = "guessesRemaining"></span><p></div>
-            <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6"><p id = "chosen">Letters chosen: <span id = "priorGuess"></span></p></div>
-          </div>
-          <div class = "row"><p id = "wins">Wins: <span id = "numWins"></span></p></div>
-          <div class = "row"><p id = "losses">Losses: <span id = "numLosses"></span></p></div>
-          <div class = "hangman"></div>
-        </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12"
+          <p id="instructions">
+            Strike the spacebar to get started!
+          </p>
       </div>
     </div>
+    <div class="container" id="wholeEnchilada">
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p id="compWord">
+          <p id="underscores"></p>
+        </p>
+      </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p id="remaining">
+          <span id="guessesRemaining"></span>
+        <p>
+      </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p id="chosen">
+          <span id="priorGuess" value="0"></span>
+        </p>
+      </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p id="wins">
+          <span id="numWins" value="0"></span>
+        </p>
+      </div>
+      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p id="losses">
+          <span id="numLosses" value="0"></span>
+        </p>
+      </div>
+      <div id="playAgainButton"></div>
+      <div class="hangman"></div>
+    </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
@@ -77,7 +88,7 @@
         2.chosen letter is injected in chosen letters array
         3.chosen letter is injected into new div
         4.hangman increments clothing (1: body, 2: flexing, 3: suit, 4: tie, 5: wedding, 6: scrubbing floor)
-          A.when Hangman is completed (in 4 missed letters)
+          A.when Hangman is completed (in 6 missed letters)
             1.losses increment
             2.sad face img displays
             3.new game button & no more games for me button appears
